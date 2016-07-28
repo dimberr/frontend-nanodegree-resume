@@ -212,14 +212,14 @@ function initializeMap() {
 
 
 // Calls the initializeMap() function when the page loads
-// window.addEventListener('load', initializeMap);
-// $("#mapDiv").append(googleMap);
-// // Vanilla JS way to listen for resizing of the window
-// // and adjust map bounds
-// window.addEventListener('resize', function(e) {
-//     //ake sure t ap bounds get updated on page resize
-//     map.fitBounds(s);
-// });
+window.addEventListener('load', initializeMap);
+$("#mapDiv").append(googleMap);
+// Vanilla JS way to listen for resizing of the window
+// and adjust map bounds
+window.addEventListener('resize', function(e) {
+    //ake sure t ap bounds get updated on page resize
+    map.fitBounds(s);
+});
 
 //change email, stop spam
 function getEmail() {

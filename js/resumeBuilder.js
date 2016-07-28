@@ -139,7 +139,7 @@ bio.display();
 work.display();
 education.display();
 projects.display();
-//initializeMap();
+initializeMap();
 
 
 //TO-DO for parse info from LinkedIn JSON
