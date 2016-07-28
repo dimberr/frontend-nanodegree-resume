@@ -1,289 +1,20 @@
 <!DOCTYPE html>
 
-<!-- Cameron Pittman, Udacity Course Developer -->
-
-
 <html>
 
 <head>
     <meta charset="utf-8">
     <title>Resume</title>
-    <link href="linkedin-to-json-resume/css/basic.css" rel="stylesheet">
-    <!-- <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBphjO_HMrXSQVZ-sDQ4hvJI0WOMTW8VV0"></script> -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="http://weloveiconfonts.com/api/?family=fontawesome" rel="stylesheet">
+    <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBphjO_HMrXSQVZ-sDQ4hvJI0WOMTW8VV0"></script>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <style type="text/css">
-        body,
-        div,
-        ul,
-        li,
-        p,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            padding: 0;
-            margin: 0;
-            font-family: "Roboto", sans-serif;
-        }
-
-        .clear-fix {
-            overflow: auto;
-        }
-
-        .education-entry,
-        .work-entry,
-        .project-entry {
-            padding: 0 5%;
-        }
-
-        h1 {
-            font-size: 40px;
-            line-height: 48px;
-            display: inline;
-        }
-
-        h2 {
-            font-weight: bold;
-            font-size: 24px;
-            color: #999;
-            line-height: 29px;
-            padding: 10px;
-        }
-
-        h3 {
-            font-style: italic;
-            font-size: 20px;
-            color: #000;
-            line-height: 22px;
-        }
-
-        h4 {
-            font-weight: bold;
-            font-size: 14px;
-            color: #4a4a4a;
-            line-height: 17px;
-        }
-
-        h2,
-        h3,
-        h4,
-        h5 {
-            padding: 10px 5%;
-        }
-
-        .date-text {
-            font-style: italic;
-            font-size: 14px;
-            color: #999;
-            line-height: 16px;
-            float: left;
-        }
-
-        .location-text {
-            font-style: italic;
-            font-size: 14px;
-            color: #999;
-            line-height: 16px;
-            float: right;
-        }
-
-        p {
-            font-size: 14px;
-            color: #333;
-            line-height: 21px;
-        }
-
-        a {
-            color: #1199c3;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-
-        .welcome-message {
-            font-style: italic;
-            font-size: 18px;
-            color: #f3f3f3;
-            line-height: 28px;
-        }
-
-        #skills-h3 {
-            display: none;
-        }
-
-        .second-color-bg {
-            background-color: #f5ae23;
-        }
-
-        .second-color-text {
-            color: #f5ae23;
-        }
-
-        .white-text {
-            font-weight: bold;
-            color: #fff;
-        }
-
-        .block {
-            display: block;
-        }
-
-        .main-color {
-            background-color: #484848;
-        }
-
-        .gray {
-            background-color: #f3f3f3;
-            padding-bottom: 10px;
-            clear: both;
-        }
-        /* TODO: Replace with image later */
-
-        #main {
-            display: block;
-        }
-
-        input {
-            border: 2px;
-            //background: transparent;
-            outline: none;
-            width: 5%;
-            height: 2%;
-        }
-
-        .flex-box {
-            display: -webkit-flex;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 10px;
-        }
-
-        .flex-column {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            padding: 10px;
-        }
-
-        .center-content {
-            padding: 2.5% 5%;
-        }
-
-        #footer {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .role {
-            margin-top: auto;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        .biopic {
-            float: left;
-            padding: 10px;
-            width: 200px;
-            display: none;
-        }
-
-        img {
-            padding: 10px;
-            width: 100%;
-            max-width: 1024px;
-        }
-
-        span {
-            padding: 5px;
-        }
-
-        #lets-connect {
-            text-align: center;
-        }
-        /* Media queries to handle various device widths */
-
-        @media only screen and (max-width: 1024px) {
-            #lets-connect {
-                margin-top: 5%;
-            }
-        }
-
-        @media only screen and (max-width:900px) {
-            .biopic {
-                width: 175px;
-            }
-        }
-
-        @media only screen and (max-width: 750px) {
-            #lets-connect {
-                margin-top: 10%;
-            }
-            .biopic {
-                width: 150px;
-            }
-            .welcome-message {
-                display: none;
-            }
-        }
-
-        #map {
-            display: block;
-            height: 100%;
-            margin: 0 5%;
-        }
-
-        #mapDiv {
-            height: 70vh;
-            width: 100%;
-            padding-bottom: 5%;
-        }
-
-        @media only screen and (min-width: 750px) {
-            #skills-h3,
-            .biopic {
-                display: block;
-            }
-        }
-    </style>
-
 </head>
 
 <body>
-    <main class="measure">
-        <h1>LinkedIn to Json Résumé</h1>
-        <p>This is a small website that exports your LinkedIn profile to a <a href="http://jsonresume.org/">JSON Résumé</a>.</p>
-        <p>The source code is available <a href="https://github.com/JMPerez/linkedin-to-json-resume">on GitHub</a>.</p>
-
-        <p>Due to <a href="https://github.com/JMPerez/linkedin-to-json-resume/issues/10">recent restrictions</a> added to the LinkedIn API, this web app can't ask for access to user's full profile. Thus, the best way is to export your data from LinkedIn
-            and import it in this tool.</p>
-
-        <h2>Instructions</h2>
-        <ol>
-            <li>Go to the <a href="https://www.linkedin.com/settings/data-export-page">Data Export Page</a> on LinkedIn and click on "Request archive".</li>
-            <li>You will get an email from LinkedIn confirming your request. You will need to wait up to 72 hours to get a link to download your data.</li>
-            <li>After some hours you will receive a link to download your archive. Click on it and save the zip file.</li>
-            <li>Drag and drop or select the file (its name should be something like LinkedInDataExport_XX-XX-XXXX.zip) in the area below:</li>
-        </ol>
-        <div>
-            <p id="filedrag" style="display: block;">
-                Drop a LinkedIn archive zip file or
-                <button class="button" id="select-file">select a file</button>.
-            </p>
-            <input type="file" id="fileselect" name="fileselect[]" class="">
-        </div>
-        <h2 id="result">Result</h2>
-        <pre><code id="output"></code></pre>
-        <button class="button download" style="display: none;">Download as html</button>
-    </main>
     <div id="main">
-        <div id="header" class="center-content clear-fix main-color">
-            <div id="footer" class="main-color"></div>
-            <hr>
+        <div id="header" class="center-content clear-fix">
             <ul id="topContacts" class="flex-box"></ul>
         </div>
         <div style="clear: both;"></div>
@@ -296,27 +27,42 @@
         <div id="education" class="gray">
             <h2>Education</h2>
         </div>
-        <!-- <div id="mapDiv"> -->
-        <!-- <h2>Where I've Lived and Worked</h2> -->
-        <!-- </div> -->
-        <div id="lets-connect" class="main-color">
-            <h2 class="second-color-bg center-text">Let's Connect</h2>
+        <div id="mapDiv">
+            <h2>Where I've Lived and Worked</h2>
+        </div>
+        <div id="lets-connect" class="dark-gray">
+            <h2 class="orange center-text">Let's Connect</h2>
             <ul id="footerContacts" class="flex-box">
             </ul>
         </div>
     </div>
 
-
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/helper.js"></script>
     <script src="js/resumeBuilder.js"></script>
-    <script src="linkedin-to-json-resume/vendor/zip.js"></script>
-    <script src="linkedin-to-json-resume/dist/output.js"></script>
-
     <script>
-        document.getElementById('main').style.display = 'none';
+        if (document.getElementsByClassName('flex-item').length === 0) {
+            document.getElementById('topContacts').style.display = 'none';
+        }
+        if (document.getElementsByTagName('h1').length === 0) {
+            document.getElementById('header').style.display = 'none';
+        }
+        if (document.getElementsByClassName('work-entry').length === 0) {
+            document.getElementById('workExperience').style.display = 'none';
+        }
+        if (document.getElementsByClassName('project-entry').length === 0) {
+            document.getElementById('projects').style.display = 'none';
+        }
+        if (document.getElementsByClassName('education-entry').length === 0) {
+            document.getElementById('education').style.display = 'none';
+        }
+        if (document.getElementsByClassName('flex-item').length === 0) {
+            document.getElementById('lets-connect').style.display = 'none';
+        }
+        if (document.getElementById('map') === null) {
+            document.getElementById('mapDiv').style.display = 'none';
+        }
     </script>
-
 </body>
 
 </html>
